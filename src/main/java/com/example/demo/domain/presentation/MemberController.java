@@ -1,8 +1,7 @@
 package com.example.demo.domain.presentation;
 
 import com.example.demo.domain.presentation.dto.request.MemberRequest;
-import com.example.demo.domain.service.MemberService;
-import lombok.AllArgsConstructor;
+import com.example.demo.domain.service.lmpI.MemberServicelmpI;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class MemberController {
 
-    private final MemberService memberService;
+    private final MemberServicelmpI memberService;
 
     @GetMapping
     public ResponseEntity view(){
@@ -36,7 +35,7 @@ public class MemberController {
     @DeleteMapping("/{seq}")
     public ResponseEntity<Void> delete(MemberRequest request){
         memberService.delete(request);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return ResponseEntity.ok(null);
     }
 
     @PutMapping("/{seq}")
