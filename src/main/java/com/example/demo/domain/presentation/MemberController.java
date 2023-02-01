@@ -23,5 +23,10 @@ public class MemberController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @DeleteMapping("/{seq}")
+    public ResponseEntity delete(MemberRequest request){
+        memberService.delete(request);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 
 }
