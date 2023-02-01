@@ -1,4 +1,4 @@
 package com.example.demo.domain.presentation;
 
-public class Controller {
+public class MemberController {
 }

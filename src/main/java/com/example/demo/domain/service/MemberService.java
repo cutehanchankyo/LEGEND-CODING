@@ -1,4 +1,4 @@
 package com.example.demo.domain.service;
 
-public class Service {
+public class MemberService {
 }
