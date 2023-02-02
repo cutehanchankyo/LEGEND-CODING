@@ -6,7 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.awt.*;
+import java.util.List;
+
 
 @Service
 @RequiredArgsConstructor
@@ -40,5 +41,12 @@ public class MemberServicelmpI implements com.example.demo.domain.service.Member
         getEntity.update(request.getContent(), request.getTitle());
 
         memberResposiroty.save(getEntity);
+    }
+
+    @Override
+    @Transactional
+    public List<Member> viewAll(){
+         List<Member> memberList = memberResposiroty.findAll();
+        return memberList;
     }
 }
