@@ -33,8 +33,8 @@ public class MemberController {
     }
 
     @DeleteMapping("/{seq}")
-    public ResponseEntity<Void> delete(MemberRequest request){
-        memberService.delete(request);
+    public ResponseEntity<Void> delete(Long seq){
+        memberService.delete(seq);
         return ResponseEntity.ok(null);
     }
 
