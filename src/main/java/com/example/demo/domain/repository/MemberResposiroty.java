@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface MemberResposiroty extends JpaRepository<Member,Long> {
-  Optional<Member> indById(Long seq);
+  Optional<Member> findById(Long seq);
 }

@@ -39,8 +39,8 @@ public class MemberController {
     }
 
     @PutMapping("/{seq}")
-    public ResponseEntity<Void> edit(MemberRequest request){
-        memberService.edit(request);
+    public ResponseEntity<Void> edit(MemberRequest request, Long seq){
+        memberService.edit(request,seq);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

@@ -26,5 +26,9 @@ public class Member {
     @Column(name = "content")
     private String content;
 
+    public void update(String content, String title){
+        this.content=content;
+        this.title=title;
+    }
 
 }

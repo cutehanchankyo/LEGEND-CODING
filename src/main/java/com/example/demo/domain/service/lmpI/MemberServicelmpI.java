@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.awt.*;
+
 @Service
 @RequiredArgsConstructor
 public class MemberServicelmpI implements com.example.demo.domain.service.MemberService {
@@ -28,5 +30,15 @@ public class MemberServicelmpI implements com.example.demo.domain.service.Member
                 .build();
 
         memberResposiroty.save(member);
+    }
+
+    @Override
+    @Transactional
+    public void edit(MemberRequest request,Long seq){
+        Member getEntity = memberResposiroty.findById(seq)
+                .orElseThrow(()->new RuntimeException());
+        getEntity.update(request.getContent(), request.getTitle());
+
+        memberResposiroty.save(getEntity);
     }
 }
