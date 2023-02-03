@@ -49,4 +49,5 @@ public class MemberServicelmpI implements com.example.demo.domain.service.Member
          List<Member> memberList = memberResposiroty.findAll();
         return memberList;
     }
+
 }
