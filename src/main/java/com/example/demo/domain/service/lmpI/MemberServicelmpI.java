@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -50,4 +51,10 @@ public class MemberServicelmpI implements com.example.demo.domain.service.Member
         return memberList;
     }
 
+    @Override
+    @Transactional
+    public Optional<Member> viewOne(Long seq){
+        Optional<Member> member = memberResposiroty.findById(seq);
+        return member;
+    }
 }

@@ -16,7 +16,7 @@ public class MemberController {
 
     @GetMapping
     public ResponseEntity view(){
-        memberService.viewALl();
+        memberService.viewAll();
         return ResponseEntity.ok(HttpStatus.OK);
     }
 
