@@ -1,7 +1,7 @@
-package com.example.demo.domain.presentation;
+package com.example.demo.domain.board.presentation;
 
-import com.example.demo.domain.presentation.dto.request.MemberRequest;
-import com.example.demo.domain.service.lmpI.MemberServicelmpI;
+import com.example.demo.domain.board.presentation.dto.request.MemberRequest;
+import com.example.demo.domain.board.service.lmpI.MemberServicelmpI;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,7 +1,8 @@
-package com.example.demo.domain.service.lmpI;
-import com.example.demo.domain.entity.Member;
-import com.example.demo.domain.presentation.dto.request.MemberRequest;
-import com.example.demo.domain.repository.MemberResposiroty;
+package com.example.demo.domain.board.service.lmpI;
+import com.example.demo.domain.board.entity.Member;
+import com.example.demo.domain.board.presentation.dto.request.MemberRequest;
+import com.example.demo.domain.board.repository.MemberResposiroty;
+import com.example.demo.domain.board.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,7 +13,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class MemberServicelmpI implements com.example.demo.domain.service.MemberService {
+public class MemberServicelmpI implements MemberService {
 
     private final MemberResposiroty memberResposiroty;
 

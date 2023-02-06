@@ -1,7 +1,7 @@
-package com.example.demo.domain.service;
+package com.example.demo.domain.board.service;
 
-import com.example.demo.domain.entity.Member;
-import com.example.demo.domain.presentation.dto.request.MemberRequest;
+import com.example.demo.domain.board.entity.Member;
+import com.example.demo.domain.board.presentation.dto.request.MemberRequest;
 
 import java.util.List;
 import java.util.Optional;

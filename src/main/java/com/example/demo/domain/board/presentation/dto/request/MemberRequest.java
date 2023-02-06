@@ -1,4 +1,4 @@
-package com.example.demo.domain.presentation.dto.request;
+package com.example.demo.domain.board.presentation.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
