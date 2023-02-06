@@ -1,4 +1,4 @@
-package com.example.demo.domain.security.config;
+package com.example.demo.global.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
