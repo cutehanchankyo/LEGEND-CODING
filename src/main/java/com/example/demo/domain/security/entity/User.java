@@ -10,8 +10,7 @@ import javax.persistence.*;
 
 @Getter
 @Entity
-@AllArgsConstructor     // 파라미터가 없는 기본 생성자를 생성해준다
-
+@NoArgsConstructor      // 파라미터가 없는 기본 생성자를 생성해준다
 public class User {
     @Id     // PK 기본키 지정
     @GeneratedValue(strategy = GenerationType.IDENTITY)     //PK 전략 방식 Identity 방식을 사용하면 자동으로 기본키 값이 증가한다
