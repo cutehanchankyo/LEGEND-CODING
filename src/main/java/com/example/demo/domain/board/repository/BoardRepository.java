@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface BoardRepository extends JpaRepository<Board,Long> {
-  Optional<Board> findById(Long seq);
+  Optional<Board> findBySeq(Long seq);
 }

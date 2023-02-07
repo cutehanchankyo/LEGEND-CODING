@@ -55,7 +55,7 @@ public class BoardServicelmpI implements BoardService {
     @Override
     @Transactional
     public Optional<Board> viewOne(Long seq){
-        Optional<Board> member = memberResposiroty.findById(seq);
+        Optional<Board> member = memberResposiroty.findBySeq(seq);
         return member;
     }
 }
