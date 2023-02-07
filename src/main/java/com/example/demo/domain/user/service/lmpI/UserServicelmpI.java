@@ -1,6 +1,7 @@
 package com.example.demo.domain.user.service.lmpI;
 
 import com.example.demo.domain.user.entity.User;
+import com.example.demo.domain.user.presentation.dto.UserDeleteDto;
 import com.example.demo.domain.user.presentation.dto.UserDto;
 import com.example.demo.domain.user.presentation.dto.UserUpdateDto;
 import com.example.demo.domain.user.repository.UserRepository;
@@ -32,5 +33,13 @@ public class UserServicelmpI implements UserService {
         User user = userRepository.findById(userUpdateDto.getId())
                 .orElseThrow(() -> new CustomerException(ErrorCode.NONE_MEMBER));
         user.update(userUpdateDto);
+    }
+
+    @Override
+    @Transactional
+    public void delete(UserDeleteDto userDeleteDto){
+        User user = userRepository.findById(userDeleteDto.getId())
+                .orElseThrow(() -> new CustomerException(ErrorCode.NONE_MEMBER));
+        userRepository.delete(user);
     }
 }

@@ -1,5 +1,6 @@
 package com.example.demo.domain.user.presentation;
 
+import com.example.demo.domain.user.presentation.dto.UserDeleteDto;
 import com.example.demo.domain.user.presentation.dto.UserDto;
 import com.example.demo.domain.user.presentation.dto.UserUpdateDto;
 import com.example.demo.domain.user.service.lmpI.UserServicelmpI;
@@ -25,6 +26,11 @@ public class UserController {
     @PutMapping
     public void update(@RequestBody UserUpdateDto userUpdateDto){
         userService.update(userUpdateDto);
+    }
+
+    @DeleteMapping
+    public void delete(@RequestBody UserDeleteDto userDeleteDto){
+        userService.delete(userDeleteDto);
     }
 
 
