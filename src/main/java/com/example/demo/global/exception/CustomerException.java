@@ -1,4 +1,10 @@
 package com.example.demo.global.exception;
 
-public class CustomerException {
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
+public class CustomerException extends RuntimeException{
+    private ErrorCode errorCode;
 }
