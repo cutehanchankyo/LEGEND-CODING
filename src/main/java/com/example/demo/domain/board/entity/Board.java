@@ -16,7 +16,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 public class Board {
     @Id
-    @Column(name = "id")
+    @Column(name = "seq")
     private Long seq;
 
     @Column(name = "name")
