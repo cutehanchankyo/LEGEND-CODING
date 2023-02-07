@@ -1,4 +1,4 @@
-package com.example.demo.domain.user.presentation.dto.request;
+package com.example.demo.domain.user.presentation.dto;
 
 import com.example.demo.domain.user.entity.User;
 import lombok.AllArgsConstructor;
@@ -8,13 +8,13 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserRequest {
+public class UserDto {
     private Long id;
     private String name;
     private String email;
     private String password;
 
-    public User toEntity(){
+    public User toEntity() {
         return User.builder()
                 .id(id)
                 .name(email)
@@ -22,4 +22,5 @@ public class UserRequest {
                 .name(name)
                 .build();
     }
+
 }

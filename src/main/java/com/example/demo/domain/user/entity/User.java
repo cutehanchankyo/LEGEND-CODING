@@ -1,5 +1,6 @@
 package com.example.demo.domain.user.entity;
 
+import com.example.demo.domain.user.presentation.dto.UserUpdateDto;
 import lombok.*;
 
 import javax.persistence.Column;
@@ -26,5 +27,10 @@ public class User {
     @Column(name = "email")
     private String email;
 
-
+    public void update(UserUpdateDto userUpdateDto){
+        this.id = userUpdateDto.getId();
+        this.name = userUpdateDto.getName();
+        this.password = userUpdateDto.getEmail();
+        this.email = userUpdateDto.getEmail();
+    }
 }
