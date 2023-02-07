@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class MemberRequest {
+public class BoardRequest {
 
     private Long seq;
     private String name;

@@ -1,7 +1,7 @@
 package com.example.demo.domain.board.presentation;
 
-import com.example.demo.domain.board.presentation.dto.request.MemberRequest;
-import com.example.demo.domain.board.service.lmpI.MemberServicelmpI;
+import com.example.demo.domain.board.presentation.dto.request.BoardRequest;
+import com.example.demo.domain.board.service.lmpI.BoardServicelmpI;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/board")
 @RequiredArgsConstructor
-public class MemberController {
+public class BoardController {
 
-    private final MemberServicelmpI memberService;
+    private final BoardServicelmpI memberService;
 
     @GetMapping
     public ResponseEntity view(){
@@ -27,7 +27,7 @@ public class MemberController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Void> add(MemberRequest request){
+    public ResponseEntity<Void> add(BoardRequest request){
         memberService.add(request);
         return new ResponseEntity<>(HttpStatus.OK);
     }
@@ -39,7 +39,7 @@ public class MemberController {
     }
 
     @PutMapping("/{seq}")
-    public ResponseEntity<Void> edit(MemberRequest request, Long seq){
+    public ResponseEntity<Void> edit(BoardRequest request, Long seq){
         memberService.edit(request,seq);
         return new ResponseEntity<>(HttpStatus.OK);
     }

@@ -14,7 +14,7 @@ import javax.persistence.Id;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Member {
+public class Board {
     @Id
     @Column(name = "id")
     private Long seq;

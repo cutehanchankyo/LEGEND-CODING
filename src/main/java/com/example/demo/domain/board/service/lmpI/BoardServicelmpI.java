@@ -1,8 +1,8 @@
 package com.example.demo.domain.board.service.lmpI;
-import com.example.demo.domain.board.entity.Member;
-import com.example.demo.domain.board.presentation.dto.request.MemberRequest;
-import com.example.demo.domain.board.repository.MemberResposiroty;
-import com.example.demo.domain.board.service.MemberService;
+import com.example.demo.domain.board.entity.Board;
+import com.example.demo.domain.board.presentation.dto.request.BoardRequest;
+import com.example.demo.domain.board.repository.BoardRepository;
+import com.example.demo.domain.board.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,9 +13,9 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class MemberServicelmpI implements MemberService {
+public class BoardServicelmpI implements BoardService {
 
-    private final MemberResposiroty memberResposiroty;
+    private final BoardRepository memberResposiroty;
 
     @Override
     @Transactional
@@ -25,8 +25,8 @@ public class MemberServicelmpI implements MemberService {
 
     @Override
     @Transactional
-    public void add(MemberRequest request){
-        Member member = Member.builder()
+    public void add(BoardRequest request){
+        Board member = Board.builder()
                 .title(request.getTitle())
                 .content(request.getContent())
                 .name(request.getName())
@@ -37,8 +37,8 @@ public class MemberServicelmpI implements MemberService {
 
     @Override
     @Transactional
-    public void edit(MemberRequest request,Long seq){
-        Member getEntity = memberResposiroty.findById(seq)
+    public void edit(BoardRequest request, Long seq){
+        Board getEntity = memberResposiroty.findById(seq)
                 .orElseThrow(()->new RuntimeException());
         getEntity.update(request.getContent(), request.getTitle());
 
@@ -47,15 +47,15 @@ public class MemberServicelmpI implements MemberService {
 
     @Override
     @Transactional
-    public List<Member> viewAll(){
-         List<Member> memberList = memberResposiroty.findAll();
+    public List<Board> viewAll(){
+         List<Board> memberList = memberResposiroty.findAll();
         return memberList;
     }
 
     @Override
     @Transactional
-    public Optional<Member> viewOne(Long seq){
-        Optional<Member> member = memberResposiroty.findById(seq);
+    public Optional<Board> viewOne(Long seq){
+        Optional<Board> member = memberResposiroty.findById(seq);
         return member;
     }
 }

@@ -1,6 +1,6 @@
 package com.example.demo.domain.board.repository;
 
-import com.example.demo.domain.board.entity.Member;
+import com.example.demo.domain.board.entity.Board;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -8,6 +8,6 @@ import java.util.Optional;
 
 
 @Repository
-public interface MemberResposiroty extends JpaRepository<Member,Long> {
-  Optional<Member> findById(Long seq);
+public interface BoardRepository extends JpaRepository<Board,Long> {
+  Optional<Board> findById(Long seq);
 }
